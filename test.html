@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Micro Templating</title>
+  <script type="text/javascript" src="template.js"></script>
+</head>
+<body>
+  <div id="results"></div>
+  <script type="text/logo-template" name="users_list">
+    <%for(var i = 0; i < menu.length; i++) {%>
+      <li><a href="<%=menu[i]%>"><%=menu[i]%></a></li>
+    <%}%>
+  </script>
+  <script type="text/javascript">
+    Template.compileTo("#results", "users_list", {
+      menu: ["Action", "Another", "Something"]
+    });
+  </script>
+</body>
+</html>
